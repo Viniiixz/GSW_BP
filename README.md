@@ -1,10 +1,3 @@
-Perfeito 🚀
-Li o documento que você me enviou e preparei um **README.md** para o seu GitHub baseado nele. O conteúdo foca em apresentar os **padrões de desenvolvimento** do projeto no Dynamics 365 F\&O, de forma clara, organizada e com exemplos.
-
-Aqui está uma primeira versão:
-
----
-
 # 📘 GSW – Padrões de Desenvolvimento
 
 Este repositório documenta os **padrões de desenvolvimento utilizados no Microsoft Dynamics 365 for Finance and Operations (D365FO)** no contexto do projeto **GSW**.
@@ -159,11 +152,7 @@ Abreviações:
 
 **Thiago Miranda dos Santos**
 📧 [thiago.santos@gsw.com.br](mailto:thiago.santos@gsw.com.br)
-
+**Carlos Vinicius Souza dos Santos**
+📧 [carlos.santos@gsw.com.br](mailto:carlos.santos@gsw.com.br)
 ---
 
-👉 Esse README pode ser usado diretamente no GitHub para documentar o repositório do projeto GSWord.
-
----
-
-Você gostaria que eu já **estruturasse o README em Markdown pronto** (com cabeçalhos, tabelas e blocos de código), para você só colar no repositório, ou prefere que eu faça um modelo **mais resumido e executivo** (como um guia rápido de referência)?
