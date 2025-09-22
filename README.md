@@ -5,7 +5,7 @@ Aqui está uma primeira versão:
 
 ---
 
-# 📘 GSWord 2.0 – Padrões de Desenvolvimento
+# 📘 GSW – Padrões de Desenvolvimento
 
 Este repositório documenta os **padrões de desenvolvimento utilizados no Microsoft Dynamics 365 for Finance and Operations (D365FO)** no contexto do projeto **GSW**.
 O objetivo é garantir consistência, qualidade e facilidade de manutenção em todas as customizações.
