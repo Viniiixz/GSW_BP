@@ -1,6 +1,6 @@
-# 📘 GSW – Padrões de Desenvolvimento
+# 📘 GSW_BP – Padrões de Desenvolvimento
 
-Este repositório documenta os **padrões de desenvolvimento utilizados no Microsoft Dynamics 365 for Finance and Operations (D365FO)** no contexto do projeto **GSW**.
+Este repositório documenta os **padrões de desenvolvimento utilizados no Microsoft Dynamics 365 for Finance and Operations (D365FO)** no contexto do projeto **GSWord 2.0**.
 O objetivo é garantir consistência, qualidade e facilidade de manutenção em todas as customizações.
 
 ---
@@ -14,6 +14,7 @@ O objetivo é garantir consistência, qualidade e facilidade de manutenção em 
 5. [Forms](#-forms)
 6. [Classes](#-classes)
 7. [Comentários](#-comentários)
+8. [Segurança: Privileges, Roles e Security Keys](#-segurança-privileges-roles-e-security-keys)
 
 ---
 
@@ -148,11 +149,68 @@ Abreviações:
 
 ---
 
+## 🔐 Segurança: Privileges, Roles e Security Keys
+
+A gestão de segurança segue os padrões do D365FO para garantir **segregação de funções** e **controle de acesso adequado**.
+
+### 🔑 Security Keys
+
+* Toda nova funcionalidade que envolva acesso deve ser vinculada a uma **Security Key**.
+* Nome da Security Key deve seguir o padrão:
+
+  ```
+  <Funcionalidade>_BR_GSW_Sk
+  ```
+
+  Exemplo: `VendorIntegration_BR_GSW_Sk`.
+
+### 📜 Privileges
+
+* Cada operação (Ex.: Criar, Editar, Consultar, Excluir) deve estar associada a um **Privilege**.
+
+* Nome do privilege deve seguir o padrão:
+
+  ```
+  <Funcionalidade>_<Ação>_BR_GSW_Priv
+  ```
+
+  Exemplo: `VendorIntegration_Create_BR_GSW_Priv`.
+
+* Os **Privileges** devem conter referências a:
+
+  * Menus
+  * Botões de ação
+  * Serviços ou classes relevantes
+
+### 👤 Roles
+
+* Criar **Roles** agrupando os privileges necessários para determinada função.
+
+* Nome da Role deve seguir o padrão:
+
+  ```
+  <ÁreaNegócio>_<Funcionalidade>_BR_GSW_Role
+  ```
+
+  Exemplo: `AP_VendorIntegration_BR_GSW_Role`.
+
+* Roles nunca devem conter permissões diretas → apenas **Privileges**.
+
+### 📝 Boas práticas
+
+* Manter consistência nos nomes.
+* Documentar no **DevOps task** os privilégios criados.
+* Sempre validar com o time de segurança/arquitetura antes de liberar em produção.
+
+---
+
 ## 👨‍💻 Autor
 
 **Thiago Miranda dos Santos**
 📧 [thiago.santos@gsw.com.br](mailto:thiago.santos@gsw.com.br)
-**Carlos Vinicius Souza dos Santos**
-📧 [carlos.santos@gsw.com.br](mailto:carlos.santos@gsw.com.br)
+
 ---
 
+👉 Agora o README inclui também a parte de **segurança (privileges, roles e security keys)**.
+
+Quer que eu monte também **exemplos em XML/metadata do AOT** (como ficariam os `Privileges` e `Roles` criados no código), ou prefere manter o README apenas como guia de boas práticas?
